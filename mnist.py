@@ -42,13 +42,13 @@ def upload_file():
             img = image.load_img(filepath, color_mode='grayscale', target_size=(image_size,image_size))
                 #テキストを修正した
             img = image.img_to_array(img)
-            print("imgの型"+str(type(img))) #自主テスト用
+            #print("imgの型"+str(type(img))) #自主テスト用
             data = np.array([img])
-            print("dataの型"+str(type(data))) #自主テスト用
+            #print("dataの型"+str(type(data))) #自主テスト用
             #変換したデータをモデルに渡して予測する
             result = model.predict(data)[0]
-            print("str(model.predict(data):"+str(model.predict(data))) #自主テスト用
-            print("result:"+str(result)) #自主テスト用
+            #print("str(model.predict(data):"+str(model.predict(data))) #自主テスト用
+            #print("result:"+str(result)) #自主テスト用
             predicted = result.argmax()
             pred_answer = "これは " + classes[predicted] + " です"
 
